@@ -1,23 +1,21 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { routeData } from "../data/routeData";
 import { SplashScreen } from "../pages";
+import { BottomNav } from "../components";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const MainApp = () => {
   return (
-    <Tab.Navigator initialRouteName={routeData[0].name}>
-      {routeData.map(({ id, name, component, options }) => (
-        <Tab.Screen
-          key={`${id} ${name}`}
-          name={name}
-          component={component}
-          options={options}
-        />
+    <Tab.Navigator
+      initialRouteName={routeData[0].name}
+      tabBar={(props) => <BottomNav {...props} />}
+    >
+      {routeData.map(({ id, name, component }) => (
+        <Tab.Screen key={`${id} ${name}`} name={name} component={component} />
       ))}
     </Tab.Navigator>
   );
@@ -25,7 +23,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="MainApp">
+    <Stack.Navigator initialRouteName="Splash">
       <Stack.Screen
         name="Splash"
         component={SplashScreen}
@@ -41,5 +39,3 @@ const Router = () => {
 };
 
 export default Router;
-
-const styles = StyleSheet.create({});

@@ -1,7 +1,7 @@
 import "react-native-gesture-handler";
-import React from "react";
+import React, { useEffect } from "react";
 import { AppLoading } from "expo";
-import { StatusBar } from "react-native";
+import { StatusBar, LogBox } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import {
   useFonts,
@@ -21,6 +21,10 @@ const App = () => {
     Poppins_600SemiBold,
     Poppins_700Bold,
   });
+
+  useEffect(() => {
+    LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
+  }, []);
 
   if (!fontLoaded) {
     return <AppLoading />;

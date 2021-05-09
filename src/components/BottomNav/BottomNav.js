@@ -62,5 +62,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     backgroundColor: "#fff",
+    elevation: 10,
   },
 });

@@ -1,12 +1,16 @@
 import React from "react";
-import { StyleSheet, Text, View, Dimensions } from "react-native";
-import { Header, Saldo } from "../../components";
+import { StyleSheet, View, ScrollView } from "react-native";
+import { Header, Saldo, Layanan, Pesanan } from "../../components";
 
 const Home = () => {
   return (
     <View style={styles.page}>
-      <Header />
-      <Saldo />
+      <ScrollView>
+        <Header />
+        <Saldo />
+        <Layanan />
+        <Pesanan />
+      </ScrollView>
     </View>
   );
 };

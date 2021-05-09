@@ -1146,6 +1146,11 @@
   dependencies:
     "@types/hammerjs" "^2.0.36"
 
+"@expo-google-fonts/poppins@^0.1.0":
+  "integrity" "sha512-iC8ii7hYyK22N3ivvLyIspLQ0D4dn1mB+llhYnUCr/h/QfwUWyEosq1uWiwNC47yCedsiPiZ99vJSfpYRjBDrA=="
+  "resolved" "https://registry.npmjs.org/@expo-google-fonts/poppins/-/poppins-0.1.0.tgz"
+  "version" "0.1.0"
+
 "@expo/config-plugins@^1.0.18", "@expo/config-plugins@1.0.29":
   "integrity" "sha512-dKtb4dTRiyWmCr/HyMFqt1tHIFpuuvIPnmvakOrg012sY7be81W9WOXjsr6WP7uLT2BfSLFhj1A9EAUzpl6sJw=="
   "resolved" "https://registry.npmjs.org/@expo/config-plugins/-/config-plugins-1.0.29.tgz"

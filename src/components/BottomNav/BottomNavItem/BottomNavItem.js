@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import AntIcon from "react-native-vector-icons/AntDesign";
 import EntIcon from "react-native-vector-icons/Entypo";
 import FeaIcon from "react-native-vector-icons/Feather";
-import { PRIMARY_COLOR, DISABLE_COLOR } from "../../../utils/palette";
+import { colorPalette } from "../../../utils/palette";
 
 const BottomNavItem = ({ isFocused, options, onPress, onLongPress, label }) => {
   const IconWrapper = ({ children }) => {
@@ -13,7 +13,7 @@ const BottomNavItem = ({ isFocused, options, onPress, onLongPress, label }) => {
   const Icon = () => {
     const iconPropety = {
       size: 24,
-      color: isFocused ? "#000" : DISABLE_COLOR,
+      color: isFocused ? colorPalette.text : colorPalette.disable,
     };
 
     const { size, color } = iconPropety;
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     height: 20,
     marginTop: 4,
     marginBottom: -25,
-    borderRadius: 15,
-    backgroundColor: PRIMARY_COLOR,
+    borderRadius: 25,
+    backgroundColor: colorPalette.primary,
   },
 });

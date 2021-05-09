@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { StyleSheet, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Logo } from "../../../assets/images";
-import { PRIMARY_COLOR, SECONDARY_COLOR } from "../../utils/palette";
+import { colorPalette } from "../../utils/palette";
 
 const Splash = ({ navigation }) => {
   useEffect(() => {
@@ -13,7 +13,7 @@ const Splash = ({ navigation }) => {
 
   return (
     <LinearGradient
-      colors={[PRIMARY_COLOR, SECONDARY_COLOR]}
+      colors={[colorPalette.primary, colorPalette.secondary]}
       style={styles.container}
     >
       <Image source={Logo} style={styles.image} />

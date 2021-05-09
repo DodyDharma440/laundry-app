@@ -1,10 +1,31 @@
 import "react-native-gesture-handler";
 import React from "react";
-import { StyleSheet, Text, View, StatusBar } from "react-native";
+import { AppLoading } from "expo";
+import { StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
+import {
+  useFonts,
+  Poppins_300Light,
+  Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_600SemiBold,
+  Poppins_700Bold,
+} from "@expo-google-fonts/poppins";
 import Router from "./src/router";
 
 const App = () => {
+  const fontLoaded = useFonts({
+    Poppins_300Light,
+    Poppins_400Regular,
+    Poppins_500Medium,
+    Poppins_600SemiBold,
+    Poppins_700Bold,
+  });
+
+  if (!fontLoaded) {
+    return <AppLoading />;
+  }
+
   return (
     <NavigationContainer>
       <Router />
@@ -14,11 +35,3 @@ const App = () => {
 };
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
